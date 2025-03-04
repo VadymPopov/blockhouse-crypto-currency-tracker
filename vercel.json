@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "web-app/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "docs/package.json",
+      "use": "@vercel/static-build",
+      "destination": "/docs"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/docs/(.*)",
+      "dest": "/docs/$1"
+    }
+  ]
+}
