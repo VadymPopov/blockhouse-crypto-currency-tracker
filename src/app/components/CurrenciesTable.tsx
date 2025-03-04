@@ -4,18 +4,7 @@ import React from "react";
 import { PacmanLoader } from "react-spinners";
 import CurrencyRow from "./CurrencyRow";
 import clsx from "clsx";
-
-export interface Currency {
-  id: string;
-  symbol: string;
-  name: string;
-  image: string;
-  current_price: number;
-  market_cap: number;
-  circulating_supply: number;
-  price_change_percentage_24h: number;
-  total_volume: number;
-}
+import { Currency } from "../types";
 
 interface TableProps {
   isLoading?: boolean;
@@ -40,7 +29,7 @@ export default function CurrenciesTable({
                   header.toLocaleLowerCase() === "coin"
                     ? "sticky left-0 bg-amber-200 min-w-[150px]"
                     : "",
-                  "p-5 font-semibold text-sm xl:text-lg"
+                  " p-2 md:p-5 md:font-semibold text-base md:text-lg"
                 )}>
                 {header}
               </th>

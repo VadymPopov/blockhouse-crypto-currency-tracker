@@ -5,9 +5,9 @@ import {
   formatCurrencyRepresentation,
   formatNumberWithCommas,
 } from "../utils/helpers";
-import { Currency } from "./CurrenciesTable";
 import Image from "next/image";
 import Label from "./Label";
+import { Currency } from "../types";
 
 export default function CurrencyRow({ currency }: { currency: Currency }) {
   const {

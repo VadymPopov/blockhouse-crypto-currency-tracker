@@ -8,10 +8,6 @@ export function formatNumberWithCommas(value: number) {
 export function formatCurrencyRepresentation(value: number) {
   const num = typeof value === "string" ? parseFloat(value) : value;
 
-  if (isNaN(num)) {
-    return "Invalid input";
-  }
-
   if (num >= 1000000000000) {
     return `$${(num / 1000000000000).toFixed(1)}T`;
   } else if (num >= 1000000000) {

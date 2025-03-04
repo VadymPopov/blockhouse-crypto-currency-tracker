@@ -16,6 +16,10 @@ export default function Button({
   isProcessing = false,
   ...rest
 }: ButtonProps) {
+   const baseStyles =
+    'flex items-center justify-center rounded-2xl text-sm font-semibold uppercase  transition-all duration-200 delay-75 ease-in-out  h-10 w-40 py-4';
+
+  const currentStyles = isProcessing ? "cursor-not-allowed opacity-50 bg-gray-400 text-gray-200 cursor-not-allowed hover:bg-gray-400" : "bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer";
   return (
     <button
       {...rest}
@@ -23,8 +27,8 @@ export default function Button({
       disabled={isProcessing}
       aria-disabled={isProcessing}
       className={clsx(
-        "flex items-center justify-center rounded-2xl text-sm font-semibold uppercase  transition-all duration-200 delay-75 ease-in-out  h-10 w-40 py-4 bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer",
-        isProcessing && "cursor-not-allowed opacity-50"
+        baseStyles,
+        currentStyles
       )}>
       {children}
       <span className='ml-2 inline-flex justify-center'>
